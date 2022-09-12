@@ -1,3 +1,3 @@
-FROM ubuntu:latest
+FROM alpine:latest
 RUN mkdir /govind
 
