@@ -16,7 +16,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 script{
-                 app = docker.build("govind-aws-ecr")
+                 app = docker.build("govind-aws-ecr-image")
                 }
             }
         }
