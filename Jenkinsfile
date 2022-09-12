@@ -28,7 +28,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{ 
-                        docker.withRegistry('https://gallery.ecr.aws/u2n5m5v5/govind-aws-ecr', 'ecr:us-east-1') {
+                        docker.withRegistry('https://gallery.ecr.aws/u2n5m5v5/govind-aws-ecr', 'ecr:us-east-1:Aws-access-for-ECR') {
                     app.push("${env.BUILD_NUMBER}")
                     app.push("latest")
                     }
