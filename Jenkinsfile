@@ -16,7 +16,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 script{
-                 app = docker.build("underwater")
+                 app = docker.build("govind-aws-ecr")
                 }
             }
         }
