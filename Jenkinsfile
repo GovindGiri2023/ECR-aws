@@ -1,5 +1,10 @@
 
 pipeline {
+    environment {
+    registry = 'gallery.ecr.aws/u2n5m5v5/govind-aws-ecr'
+    registryCredential = 'Aws-access-for-ECR'
+    dockerImage = ''
+    }
     agent any
     options {
         skipStagesAfterUnstable()
@@ -28,7 +33,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{ 
-                        docker.withRegistry('https://gallery.ecr.aws/u2n5m5v5/govind-aws-ecr', 'ecr:Aws-access-for-ECR') {
+                        docker.withRegistry("https://" + registry, "ecr:us-east-1:" + registryCredential) {
                         app.push()
                     }
                 }
