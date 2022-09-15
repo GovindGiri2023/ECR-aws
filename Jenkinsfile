@@ -21,7 +21,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 script{
-                    app = docker.build("demoimage:${env.BUILD_ID}")
+                    app = docker.build("govind-aws-ecr:${env.BUILD_ID}")
                 }
             }
         }
