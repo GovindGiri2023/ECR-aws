@@ -21,7 +21,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 script{
-                    app = docker.build("govind-aws-registry:${env.BUILD_ID}")
+                    app = docker.build("govind-aws-registry:ubuntu:${env.BUILD_ID}")
                 }
             }
         }
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script{ 
                         docker.withRegistry("https://" + registry, "ecr:us-east-1:" + registryCredential) {
-                        app.push(ubuntu)
+                        app.push()
                     }
                 }
             }
