@@ -21,7 +21,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 script{
-                    app = docker.build registry + " ubunt", ":${env.BUILD_ID}"
+                    app = docker.build registry + ":${env.BUILD_ID}"
                 }
             }
         }
