@@ -1,7 +1,7 @@
 
 pipeline {
     environment {
-    registry = 'gallery.ecr.aws/u2n5m5v5/govind-aws-ecr'
+    registry = '603540392829.dkr.ecr.us-east-1.amazonaws.com/govind-aws-registry'
     registryCredential = 'Aws-access-for-ECR'
     dockerImage = ''
     }
